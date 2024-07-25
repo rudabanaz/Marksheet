@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <center>
+    <h1 style="text-decoration: underline;">Intermediate Examination Part1(Annual) 2024</h1>
+    <h2 style="text-decoration: underline;">Marksheet</h2></center>
+    <table  >
+       <tr >
+        <td ><h4>Name: Mohammad Ali</h4></td>
+        <td  ><h4>Roll No: 225512</h4></td>
+       </tr>
+       <tr>
+        <td ><h4>Group : Science</h4></td>
+        <td ><h4>College: Gulshan Degree College</h4></td>
+       </tr></table>
+       <table>
+<tr><th >SR. </th>
+<th>Subject</th>
+<th >Total Marks</th>
+<th >Marks Obtained</th></tr>
+<tr><td > 01</td>
+    <td><label for="maths">Maths</label></td>
+<td> 100</td>
+<td> <input type="number" id="maths" placeholder="Enter marks"></td></tr>
+
+<tr><td > 02</td>
+    <td><label for="Chemistry">Chemistry</label></td>
+<td> 100</td>
+<td> <input type="number" id="Chemistry" placeholder="Enter marks"></td></tr>
+
+<tr><td > 03</td>
+    <td><label for="Physics">Physics</label></td>
+<td> 100</td>
+<td> <input type="number" id="Physics" placeholder="Enter marks"></td></tr>
+
+<tr><td > 04</td>
+    <td><label for="Urdu">Urdu</label></td>
+<td> 100</td>
+<td> <input type="number" id="Urdu" placeholder="Enter marks"></td></tr>
+
+<tr><td > 05</td>
+    <td><label for="English">English</label></td>
+<td> 100</td>
+<td> <input type="number" id="English" placeholder="Enter marks"></td></tr>
+
+<tr><td > 06</td>
+    <td><label for="Islamiat">Islamiat</label></td>
+<td> 100</td>
+<td> <input type="number" id="Islamiat" placeholder="Enter marks"></td></tr></table>
+  <table> <tr ><td style="width: 100%;">
+    
+    <button onclick="calculateMarks()">Calculate Total</button>
+</td></tr></table>
+   <table><tr><td style="width: 45%;"><div id="result"></div></td>
+<td style="width: 45%;">
+<div id="per"></div></td></tr></table>
+<div id="status"></div>
+</div>
+<script>
+    function calculateMarks() {
+        
+        var maths = parseFloat(document.getElementById('Chemistry').value);
+        var Chemistry = parseFloat(document.getElementById('Chemistry').value);
+        var Physics = parseFloat(document.getElementById('Physics').value);
+        var Urdu = parseFloat(document.getElementById('Urdu').value);
+        var English = parseFloat(document.getElementById('English').value);
+        var Islamiat = parseFloat(document.getElementById('Islamiat').value);
+
+      
+        var totalMarks = maths + Chemistry + Physics + Urdu + English + Islamiat;
+        var percentage = totalMarks / 600 * 100;
+       
+        document.getElementById('result').innerText = `Total Marks: ${totalMarks}`;
+        document.getElementById('per').innerText = `percentage: ${percentage } %`;
+
+        if (totalMarks>=198)
+    {
+        document.getElementById('status').innerText = ' Status = PASS';
+    }
+    else 
+    document.getElementById('status').innerText = 'Status = FAIL';     
+    }
+</script>
+</body>
+</html>
